@@ -1,0 +1,2 @@
+Description
+chrome://extensionで「パッケージ化されていない拡張機能」として読み込んでリロードするたびにbookmarkの数をalertするだけ。
