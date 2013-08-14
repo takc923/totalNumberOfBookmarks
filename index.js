@@ -1,6 +1,8 @@
-chrome.bookmarks.getTree(function(bookmarks){
-    alert(getNumber(bookmarks[0]));
-});
+setInterval(function(){
+    chrome.bookmarks.getTree(function(bookmarks){
+        chrome.browserAction.setBadgeText({text: String(getNumber(bookmarks[0]))});
+    });
+}, 1000);
 
 function getNumber(tree) {
         if (tree.children == undefined) {
