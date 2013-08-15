@@ -1,8 +1,12 @@
-setInterval(function(){
+display();
+chrome.bookmarks.onCreated.addListener(display);
+chrome.bookmarks.onRemoved.addListener(display);
+
+function display() {
     chrome.bookmarks.getTree(function(bookmarks){
         chrome.browserAction.setBadgeText({text: String(getNumber(bookmarks[0]))});
     });
-}, 1000);
+}
 
 function getNumber(tree) {
         if (tree.children == undefined) {
